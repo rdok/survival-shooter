@@ -54,8 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Animating(float horizontalAxis, float verticalAxis)
     {
-        const float tolerance = 0f;
-        var walking = Math.Abs(horizontalAxis) > tolerance || Math.Abs(verticalAxis) > tolerance;
+        var walking = horizontalAxis != 0f || verticalAxis != 0f;
 
         _animator.SetBool("IsWalking", walking);
     }
